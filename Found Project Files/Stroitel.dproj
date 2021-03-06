@@ -1,0 +1,241 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{11CCE07A-8CEC-46BE-819F-3793112D4D65}</ProjectGuid>
+        <MainSource>Stroitel.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.4</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>true</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Alignment>1</DCC_Alignment>
+        <DCC_DebugInformation>1</DCC_DebugInformation>
+        <DCC_WriteableConstants>true</DCC_WriteableConstants>
+        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
+        <DCC_DcuOutput>..\Compile Units</DCC_DcuOutput>
+        <DCC_UnitSearchPath>..\..\PORTFEIL\Extra Units;..\Tools Units;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UsePackage>VCL50;VCLX50;VCLSMP50;TEEQR50;NMFAST50;VCLIE50;VCLBDE50;VCLDBX50;ibevnt50;INETDB50;INET50;dclaxserver50;dclocx50;VCLIB50;TEEUI50;TEEDB50;TEE50;QRPT50;$(DCC_UsePackage)</DCC_UsePackage>
+        <SanitizedProjectName>Stroitel</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+        <VerInfo_MajorVer>2</VerInfo_MajorVer>
+        <VerInfo_Build>10</VerInfo_Build>
+        <VerInfo_Locale>1026</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=2.0.0.10;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>Stroitel_Icon.ico</Icon_MainIcon>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="KPRSTROI.PAS">
+            <Form>DlgKooperacia</Form>
+        </DCCReference>
+        <DCCReference Include="NEWKOOP.PAS">
+            <Form>DlgNewKoop</Form>
+        </DCCReference>
+        <DCCReference Include="SPISUK.PAS">
+            <Form>DlgSpisuk</Form>
+        </DCCReference>
+        <DCCReference Include="KARTON.PAS">
+            <Form>DlgKarton</Form>
+        </DCCReference>
+        <DCCReference Include="PLANVNS.PAS">
+            <Form>DlgPlanVns</Form>
+        </DCCReference>
+        <DCCReference Include="KASA.PAS">
+            <Form>DlgKasa</Form>
+        </DCCReference>
+        <DCCReference Include="OTCHET.PAS">
+            <Form>DlgOtchet</Form>
+        </DCCReference>
+        <DCCReference Include="KARPOST.PAS">
+            <Form>DlgKartonPost</Form>
+        </DCCReference>
+        <DCCReference Include="PRIHOD.PAS">
+            <Form>DlgPrixRaz</Form>
+        </DCCReference>
+        <DCCReference Include="CHSTOTKA.PAS">
+            <Form>DlgChastOtkaz</Form>
+        </DCCReference>
+        <DCCReference Include="LOGO.PAS">
+            <Form>DlgLogo</Form>
+        </DCCReference>
+        <DCCReference Include="TEGLENE.PAS">
+            <Form>DlgTeglene</Form>
+        </DCCReference>
+        <DCCReference Include="STRBANK.PAS">
+            <Form>DlgStrBank</Form>
+        </DCCReference>
+        <DCCReference Include="LISTPRT.PAS">
+            <Form>DlgListPrint</Form>
+        </DCCReference>
+        <DCCReference Include="PRTSTPL.PAS">
+            <Form>DlgPrintPlanStr</Form>
+        </DCCReference>
+        <DCCReference Include="PROGRESS.PAS">
+            <Form>DlgProgress</Form>
+        </DCCReference>
+        <DCCReference Include="PASSWORD.PAS">
+            <Form>DlgPass</Form>
+        </DCCReference>
+        <DCCReference Include="MAIL.PAS">
+            <Form>DlgMail</Form>
+        </DCCReference>
+        <DCCReference Include="ALINGT.PAS">
+            <Form>DlgAlign</Form>
+        </DCCReference>
+        <DCCReference Include="MAILPRN.PAS">
+            <Form>DlgMailPrint</Form>
+        </DCCReference>
+        <DCCReference Include="FULLOTK.PAS">
+            <Form>DlgFullOtkaz</Form>
+        </DCCReference>
+        <DCCReference Include="ABOUT.PAS">
+            <Form>DlgAbout</Form>
+        </DCCReference>
+        <DCCReference Include="INFORMA.PAS">
+            <Form>DlgInfo</Form>
+        </DCCReference>
+        <DCCReference Include="PERIOD.PAS">
+            <Form>DlgNewPeriod</Form>
+        </DCCReference>
+        <DCCReference Include="PERSPIS.PAS">
+            <Form>DlgPeriodSpisuk</Form>
+        </DCCReference>
+        <DCCReference Include="PREDKASA.PAS">
+            <Form>DlgPredKasa</Form>
+        </DCCReference>
+        <DCCReference Include="..\Tools Units\Myconst.pas"/>
+        <DCCReference Include="..\Tools Units\ToolsFunc.pas"/>
+        <DCCReference Include="ChangeKoef.pas">
+            <Form>DlgChangeKoef</Form>
+        </DCCReference>
+        <DCCReference Include="PrtKarton.pas">
+            <Form>DlgPrintKarton</Form>
+        </DCCReference>
+        <DCCReference Include="Arhivpr.pas">
+            <Form>DlgArhivProgres</Form>
+        </DCCReference>
+        <DCCReference Include="Arhiv.pas">
+            <Form>DlgArhiv</Form>
+        </DCCReference>
+        <DCCReference Include="PrtOtchet.pas">
+            <Form>DlgPrintOtchet</Form>
+        </DCCReference>
+        <DCCReference Include="SelectColumsPrint.pas">
+            <Form>DlgSelPrint</Form>
+        </DCCReference>
+        <DCCReference Include="..\Tools Units\Setupreg.pas"/>
+        <DCCReference Include="ConstMessage.pas"/>
+        <DCCReference Include="Passchg.pas">
+            <Form>DlgChangePass</Form>
+        </DCCReference>
+        <DCCReference Include="RegisterProgram.pas">
+            <Form>DlgRegProgram</Form>
+        </DCCReference>
+        <DCCReference Include="DlgDiskDrive.pas">
+            <Form>DlgDrive</Form>
+        </DCCReference>
+        <DCCReference Include="LockAccess.pas"/>
+        <DCCReference Include="..\Tools Units\PrintTables.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">Stroitel.dpr</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

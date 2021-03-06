@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{780CFDDA-E2B6-431F-9E26-BFBA6FCA1C02}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Found Project Files\Stroitel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Uninstall\uninstall.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Stroitel">
+        <MSBuild Projects="Found Project Files\Stroitel.dproj"/>
+    </Target>
+    <Target Name="Stroitel:Clean">
+        <MSBuild Projects="Found Project Files\Stroitel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Stroitel:Make">
+        <MSBuild Projects="Found Project Files\Stroitel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uninstall">
+        <MSBuild Projects="Uninstall\uninstall.dproj"/>
+    </Target>
+    <Target Name="uninstall:Clean">
+        <MSBuild Projects="Uninstall\uninstall.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uninstall:Make">
+        <MSBuild Projects="Uninstall\uninstall.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Stroitel;uninstall"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Stroitel:Clean;uninstall:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Stroitel:Make;uninstall:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
